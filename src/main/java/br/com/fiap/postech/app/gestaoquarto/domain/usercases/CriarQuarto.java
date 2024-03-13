@@ -1,7 +1,7 @@
-package br.com.fiap.postech.gestaoquarto.domain.usercases;
+package br.com.fiap.postech.app.gestaoquarto.domain.usercases;
 
-import br.com.fiap.postech.gestaoquarto.domain.entities.Quarto;
-import br.com.fiap.postech.gestaoquarto.domain.repositories.QuartoRepository;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.Quarto;
+import br.com.fiap.postech.app.gestaoquarto.domain.repositories.QuartoRepository;
 
 public class CriarQuarto {
 

@@ -1,8 +1,8 @@
-package br.com.fiap.postech.gestaoquarto.data.controller;
+package br.com.fiap.postech.app.gestaoquarto.data.controller;
 
-import br.com.fiap.postech.gestaoquarto.data.models.QuartoRequestModel;
-import br.com.fiap.postech.gestaoquarto.data.models.QuartoResponseModel;
-import br.com.fiap.postech.gestaoquarto.domain.usercases.CriarQuarto;
+import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoRequestModel;
+import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoResponseModel;
+import br.com.fiap.postech.app.gestaoquarto.domain.usercases.CriarQuarto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class QuartoController {
 
     final CriarQuarto criarQuarto;
 
-    public QuartoController(CriarQuarto criarQuarto) {
+    QuartoController(CriarQuarto criarQuarto) {
         this.criarQuarto = criarQuarto;
     }
 
@@ -26,6 +26,7 @@ public class QuartoController {
     public ResponseEntity<?> create(@RequestBody QuartoRequestModel requestModel) {
 
         try {
+
             criarQuarto.call(QuartoRequestModel.toAlbum(requestModel));
 
             return new ResponseEntity<>(new QuartoResponseModel(HttpStatus.OK.value(), HttpStatus.OK.name()),

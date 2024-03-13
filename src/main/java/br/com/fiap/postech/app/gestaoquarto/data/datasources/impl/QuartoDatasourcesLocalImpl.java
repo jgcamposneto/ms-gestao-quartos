@@ -1,8 +1,8 @@
-package br.com.fiap.postech.gestaoquarto.data.datasources.impl;
+package br.com.fiap.postech.app.gestaoquarto.data.datasources.impl;
 
-import br.com.fiap.postech.gestaoquarto.data.datasources.JpaQuartoRepository;
-import br.com.fiap.postech.gestaoquarto.data.datasources.QuartoDatasourcesLocal;
-import br.com.fiap.postech.gestaoquarto.data.models.QuartoModel;
+import br.com.fiap.postech.app.gestaoquarto.data.datasources.JpaQuartoRepository;
+import br.com.fiap.postech.app.gestaoquarto.data.datasources.QuartoDatasourcesLocal;
+import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoModel;
 
 import java.util.List;
 

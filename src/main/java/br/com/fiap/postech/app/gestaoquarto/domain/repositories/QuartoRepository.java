@@ -1,6 +1,6 @@
-package br.com.fiap.postech.gestaoquarto.domain.repositories;
+package br.com.fiap.postech.app.gestaoquarto.domain.repositories;
 
-import br.com.fiap.postech.gestaoquarto.domain.entities.Quarto;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.Quarto;
 
 import java.util.List;
 

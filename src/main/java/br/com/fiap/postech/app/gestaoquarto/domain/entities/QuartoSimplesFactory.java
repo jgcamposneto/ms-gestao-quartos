@@ -1,4 +1,4 @@
-package br.com.fiap.postech.gestaoquarto.domain.entities;
+package br.com.fiap.postech.app.gestaoquarto.domain.entities;
 
 public class QuartoSimplesFactory implements QuartoFactory {
     @Override

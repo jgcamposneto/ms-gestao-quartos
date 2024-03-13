@@ -1,4 +1,4 @@
-package br.com.fiap.postech.gestaoquarto;
+package br.com.fiap.postech.app;
 
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;

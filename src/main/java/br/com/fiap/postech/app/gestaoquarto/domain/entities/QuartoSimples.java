@@ -1,7 +1,6 @@
-package br.com.fiap.postech.gestaoquarto.domain.entities;
+package br.com.fiap.postech.app.gestaoquarto.domain.entities;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 class QuartoSimples extends QuartoPadrao {
 
