@@ -1,4 +1,4 @@
-package br.com.fiap.postech.gestaoquarto.data.controller;
+package br.com.fiap.postech.gestaoquarto.data.models;
 
 public class QuartoResponseModel {
     public QuartoResponseModel(int value, String name) {

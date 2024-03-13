@@ -1,6 +1,6 @@
 package br.com.fiap.postech.gestaoquarto.data.datasources;
 
-import br.com.fiap.postech.gestaoquarto.domain.entities.QuartoModel;
+import br.com.fiap.postech.gestaoquarto.data.models.QuartoModel;
 
 import java.util.List;
 

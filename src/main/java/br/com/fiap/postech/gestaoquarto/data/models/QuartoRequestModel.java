@@ -1,4 +1,4 @@
-package br.com.fiap.postech.gestaoquarto.data.controller;
+package br.com.fiap.postech.gestaoquarto.data.models;
 
 import br.com.fiap.postech.gestaoquarto.domain.entities.Predio;
 import br.com.fiap.postech.gestaoquarto.domain.entities.Quarto;

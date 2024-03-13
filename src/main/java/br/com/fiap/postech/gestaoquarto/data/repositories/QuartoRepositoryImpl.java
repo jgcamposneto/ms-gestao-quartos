@@ -2,7 +2,7 @@ package br.com.fiap.postech.gestaoquarto.data.repositories;
 
 import br.com.fiap.postech.gestaoquarto.data.datasources.QuartoDatasourcesLocal;
 import br.com.fiap.postech.gestaoquarto.domain.entities.Quarto;
-import br.com.fiap.postech.gestaoquarto.domain.entities.QuartoModel;
+import br.com.fiap.postech.gestaoquarto.data.models.QuartoModel;
 import br.com.fiap.postech.gestaoquarto.domain.repositories.QuartoRepository;
 
 import java.util.List;

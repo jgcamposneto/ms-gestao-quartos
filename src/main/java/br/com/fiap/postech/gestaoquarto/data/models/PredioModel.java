@@ -1,4 +1,4 @@
-package br.com.fiap.postech.gestaoquarto.domain.entities;
+package br.com.fiap.postech.gestaoquarto.data.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

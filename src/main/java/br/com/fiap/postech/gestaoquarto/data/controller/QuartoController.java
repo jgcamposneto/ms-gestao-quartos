@@ -1,5 +1,7 @@
 package br.com.fiap.postech.gestaoquarto.data.controller;
 
+import br.com.fiap.postech.gestaoquarto.data.models.QuartoRequestModel;
+import br.com.fiap.postech.gestaoquarto.data.models.QuartoResponseModel;
 import br.com.fiap.postech.gestaoquarto.domain.usercases.CriarQuarto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
