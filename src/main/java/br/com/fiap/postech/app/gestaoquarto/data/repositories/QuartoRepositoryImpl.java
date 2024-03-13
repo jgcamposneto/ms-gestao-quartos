@@ -21,7 +21,6 @@ public class QuartoRepositoryImpl implements QuartoRepository {
     }
 
     @Override
-    @Transactional
     public void criarQuarto(Quarto quarto) {
         PredioModel predioModel = predioDatasourcesLocal.consultarPredio(quarto.getPredio().getId());
         QuartoModel quartoModel = QuartoModel.toQuartoModel(quarto);

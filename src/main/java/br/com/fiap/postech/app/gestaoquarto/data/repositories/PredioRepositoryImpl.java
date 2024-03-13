@@ -15,7 +15,10 @@ public class PredioRepositoryImpl implements PredioRepository {
 
     @Override
     public Predio consultarPredio(Long id) {
-        PredioModel predioModel = new PredioModel();
-        return predioModel.toPredio(predioDatasourcesLocal.consultarPredio(id));
+        PredioModel predioModel = predioDatasourcesLocal.consultarPredio(id);
+        if(predioModel != null) {
+            return predioModel.toPredio(predioDatasourcesLocal.consultarPredio(id));
+        }
+        return null;
     }
 }
