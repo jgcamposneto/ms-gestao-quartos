@@ -18,6 +18,6 @@ public class PredioModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "predio", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "predioModel", cascade = CascadeType.ALL)
     private List<QuartoModel> quartos;
 }
