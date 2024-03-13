@@ -31,8 +31,10 @@ public class GestaoQuartosApplication {
 	void genericApplicationContext(BeanDefinitionRegistry beanRegistry) {
 		ClassPathBeanDefinitionScanner beanDefinitionScanner = new ClassPathBeanDefinitionScanner(beanRegistry);
 		beanDefinitionScanner.addIncludeFilter(removeModelAndEntitiesFilter());
-		beanDefinitionScanner.scan("com.thekingoftech.app");
+		beanDefinitionScanner.scan("br.com.fiap.postech.app.gestaoquarto");
 	}
+
+
 
 	static TypeFilter removeModelAndEntitiesFilter() {
 		return (MetadataReader mr,
