@@ -57,4 +57,9 @@ abstract class QuartoPadrao implements Quarto {
     public BigDecimal getValorDiaria() {
         return valorDiaria;
     }
+
+    @Override
+    public void setPredio(Predio predio) {
+        this.predio = predio;
+    }
 }

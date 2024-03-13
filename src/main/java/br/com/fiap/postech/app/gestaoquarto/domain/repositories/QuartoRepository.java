@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface QuartoRepository {
 
-    public void criarQuarto(Quarto quarto);
-    public void apagarQuarto(Long id);
-    public Quarto consultarQuarto(Long id);
-    public List<Quarto> consultarQuartos();
+    void criarQuarto(Quarto quarto);
+    void apagarQuarto(Long id);
+    Quarto consultarQuarto(Long id);
+    List<Quarto> consultarQuartos();
 
 }

@@ -13,5 +13,5 @@ public interface Quarto {
     int getTotalCamasSolteiro();
     List<String> getOutrosMoveis();
     BigDecimal getValorDiaria();
-
+    void setPredio(Predio predio);
 }
