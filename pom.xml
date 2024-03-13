@@ -8,7 +8,7 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.fiap.postech.gestaoquarto</groupId>
+	<groupId>br.com.fiap.postech.app</groupId>
 	<artifactId>gestao-quartos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gestao-quartos</name>
