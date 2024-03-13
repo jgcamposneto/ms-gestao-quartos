@@ -5,5 +5,6 @@ import java.util.List;
 public class Predio {
 
     private Long id;
+    private String localizacao;
     private List<Quarto> quartos;
 }
