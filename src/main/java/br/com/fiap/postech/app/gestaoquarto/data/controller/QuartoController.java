@@ -30,8 +30,7 @@ public class QuartoController {
         try {
             criarQuarto.call(QuartoRequestModel.toQuarto(requestModel));
 
-            return new ResponseEntity<>(new QuartoResponseModel(HttpStatus.OK.value(), HttpStatus.OK.name()),
-                    HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

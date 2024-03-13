@@ -34,10 +34,9 @@ public class QuartoModel {
     protected List<String> outrosMoveis;
     protected BigDecimal valorDiaria;
 
-    public QuartoModel toQuartoModel(Quarto quarto) {
+    public static QuartoModel toQuartoModel(Quarto quarto) {
         QuartoModel quartoModel = new QuartoModel();
         quartoModel.setId(quarto.getId());
-        quartoModel.setPredioModel(new PredioModel());
         quartoModel.setTotalPessoas(quarto.getTotalPessoas());
         quartoModel.setTotalCamasKingSize(quarto.getTotalCamasKingSize());
         quartoModel.setTotalCamasQueenSize(quarto.getTotalCamasQueenSize());
