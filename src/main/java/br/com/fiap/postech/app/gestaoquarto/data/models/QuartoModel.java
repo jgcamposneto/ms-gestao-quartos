@@ -29,8 +29,8 @@ public class QuartoModel {
     private int totalCamasKingSize;
     private int totalCamasSolteiro;
     @ElementCollection
-    @CollectionTable(name = "outros_imoveis", joinColumns = @JoinColumn(name = "quarto_id"))
-    @Column(name = "outro_imovel")
+    @CollectionTable(name = "outros_moveis", joinColumns = @JoinColumn(name = "quarto_id"))
+    @Column(name = "outro_movel")
     protected List<String> outrosMoveis;
     protected BigDecimal valorDiaria;
 

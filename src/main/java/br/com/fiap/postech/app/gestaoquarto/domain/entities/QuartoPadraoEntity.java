@@ -11,7 +11,7 @@ abstract class QuartoPadraoEntity implements QuartoEntity {
     protected int totalCamasQueenSize;
     protected int totalCamasKingSize;
     protected int totalCamasSolteiro;
-    protected List<String> outrosImoveis;
+    protected List<String> outrosMoveis;
     protected BigDecimal valorDiaria;
 
     protected QuartoPadraoEntity(PredioEntity predioEntity) {
@@ -50,7 +50,7 @@ abstract class QuartoPadraoEntity implements QuartoEntity {
 
     @Override
     public List<String> getOutrosMoveis() {
-        return outrosImoveis;
+        return outrosMoveis;
     }
 
     @Override
