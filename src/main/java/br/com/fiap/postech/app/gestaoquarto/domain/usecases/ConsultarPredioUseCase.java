@@ -1,12 +1,12 @@
-package br.com.fiap.postech.app.gestaoquarto.domain.usercases;
+package br.com.fiap.postech.app.gestaoquarto.domain.usecases;
 
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.PredioRepository;
 
-public class ConsultarPredio {
+public class ConsultarPredioUseCase {
 
     final PredioRepository predioRepository;
 
-    public ConsultarPredio(PredioRepository predioRepository) {
+    public ConsultarPredioUseCase(PredioRepository predioRepository) {
         this.predioRepository = predioRepository;
     }
 

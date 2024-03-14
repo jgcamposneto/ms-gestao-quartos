@@ -1,9 +1,8 @@
 package br.com.fiap.postech.app.gestaoquarto.data.controller;
 
 import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoRequestModel;
-import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoResponseModel;
-import br.com.fiap.postech.app.gestaoquarto.domain.usercases.ConsultarPredio;
-import br.com.fiap.postech.app.gestaoquarto.domain.usercases.CriarQuarto;
+import br.com.fiap.postech.app.gestaoquarto.domain.usecases.ConsultarPredioUseCase;
+import br.com.fiap.postech.app.gestaoquarto.domain.usecases.CriarQuartoUseCase;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("quartos")
 public class QuartoController {
 
-    final CriarQuarto criarQuarto;
-    final ConsultarPredio consultarPredio;
+    final CriarQuartoUseCase criarQuarto;
+    final ConsultarPredioUseCase consultarPredioUseCase;
 
-    QuartoController(CriarQuarto criarQuarto, ConsultarPredio consultarPredio) {
+    QuartoController(CriarQuartoUseCase criarQuarto, ConsultarPredioUseCase consultarPredioUseCase) {
         this.criarQuarto = criarQuarto;
-        this.consultarPredio = consultarPredio;
+        this.consultarPredioUseCase = consultarPredioUseCase;
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
