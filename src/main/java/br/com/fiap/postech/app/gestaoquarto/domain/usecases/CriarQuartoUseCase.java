@@ -2,21 +2,20 @@ package br.com.fiap.postech.app.gestaoquarto.domain.usecases;
 
 import br.com.fiap.postech.app.gestaoquarto.domain.entities.PredioEntity;
 import br.com.fiap.postech.app.gestaoquarto.domain.entities.Quarto;
-import br.com.fiap.postech.app.gestaoquarto.domain.repositories.PredioRepository;
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.QuartoRepository;
 
 public class CriarQuartoUseCase {
 
     final QuartoRepository quartoRepository;
-    final PredioRepository predioRepository;
+    final ConsultarPredioUseCase consultarPredioUseCase;
 
-    public CriarQuartoUseCase(QuartoRepository quartoRepository, PredioRepository predioRepository) {
+    public CriarQuartoUseCase(QuartoRepository quartoRepository, ConsultarPredioUseCase consultarPredioUseCase) {
         this.quartoRepository = quartoRepository;
-        this.predioRepository = predioRepository;
+        this.consultarPredioUseCase = consultarPredioUseCase;
     }
 
     public void call(Quarto quarto) {
-        PredioEntity predioEntity = predioRepository.consultarPredio(quarto.getPredio().getId());
+        PredioEntity predioEntity = consultarPredioUseCase.call(quarto.getPredio().getId());
         validarPredio(predioEntity);
         quarto.setPredio(predioEntity);
         quartoRepository.criarQuarto(quarto);
