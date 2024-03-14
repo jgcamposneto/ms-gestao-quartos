@@ -6,7 +6,7 @@ public class PredioEntity {
 
     private Long id;
     private String localizacao;
-    private List<Quarto> quartos;
+    private List<QuartoEntity> quartoEntities;
 
     public Long getId() {
         return id;
@@ -24,11 +24,11 @@ public class PredioEntity {
         this.localizacao = localizacao;
     }
 
-    public List<Quarto> getQuartos() {
-        return quartos;
+    public List<QuartoEntity> getQuartos() {
+        return quartoEntities;
     }
 
-    public void setQuartos(List<Quarto> quartos) {
-        this.quartos = quartos;
+    public void setQuartos(List<QuartoEntity> quartoEntities) {
+        this.quartoEntities = quartoEntities;
     }
 }

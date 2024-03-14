@@ -3,7 +3,7 @@ package br.com.fiap.postech.app.gestaoquarto.domain.entities;
 import java.math.BigDecimal;
 import java.util.List;
 
-public interface Quarto {
+public interface QuartoEntity {
 
     Long getId();
     PredioEntity getPredio();

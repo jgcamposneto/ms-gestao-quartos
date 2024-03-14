@@ -1,14 +1,14 @@
 package br.com.fiap.postech.app.gestaoquarto.domain.repositories;
 
-import br.com.fiap.postech.app.gestaoquarto.domain.entities.Quarto;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.QuartoEntity;
 
 import java.util.List;
 
 public interface QuartoRepository {
 
-    void criarQuarto(Quarto quarto);
+    void criarQuarto(QuartoEntity quartoEntity);
     void apagarQuarto(Long id);
-    Quarto consultarQuarto(Long id);
-    List<Quarto> consultarQuartos();
+    QuartoEntity consultarQuarto(Long id);
+    List<QuartoEntity> consultarQuartos();
 
 }

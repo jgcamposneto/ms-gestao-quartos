@@ -3,7 +3,7 @@ package br.com.fiap.postech.app.gestaoquarto.domain.entities;
 import java.math.BigDecimal;
 import java.util.List;
 
-abstract class QuartoPadrao implements Quarto {
+abstract class QuartoPadraoEntity implements QuartoEntity {
 
     private Long id;
     private PredioEntity predioEntity;
@@ -14,7 +14,7 @@ abstract class QuartoPadrao implements Quarto {
     protected List<String> outrosImoveis;
     protected BigDecimal valorDiaria;
 
-    protected QuartoPadrao(PredioEntity predioEntity) {
+    protected QuartoPadraoEntity(PredioEntity predioEntity) {
         this.predioEntity = predioEntity;
     }
 

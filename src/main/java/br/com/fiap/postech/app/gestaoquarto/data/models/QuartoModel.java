@@ -1,6 +1,6 @@
 package br.com.fiap.postech.app.gestaoquarto.data.models;
 
-import br.com.fiap.postech.app.gestaoquarto.domain.entities.Quarto;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.QuartoEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,15 +34,15 @@ public class QuartoModel {
     protected List<String> outrosMoveis;
     protected BigDecimal valorDiaria;
 
-    public static QuartoModel toQuartoModel(Quarto quarto) {
+    public static QuartoModel toQuartoModel(QuartoEntity quartoEntity) {
         QuartoModel quartoModel = new QuartoModel();
-        quartoModel.setId(quarto.getId());
-        quartoModel.setTotalPessoas(quarto.getTotalPessoas());
-        quartoModel.setTotalCamasKingSize(quarto.getTotalCamasKingSize());
-        quartoModel.setTotalCamasQueenSize(quarto.getTotalCamasQueenSize());
-        quartoModel.setTotalCamasSolteiro(quarto.getTotalCamasSolteiro());
-        quartoModel.setOutrosMoveis(quarto.getOutrosMoveis());
-        quartoModel.setValorDiaria(quarto.getValorDiaria());
+        quartoModel.setId(quartoEntity.getId());
+        quartoModel.setTotalPessoas(quartoEntity.getTotalPessoas());
+        quartoModel.setTotalCamasKingSize(quartoEntity.getTotalCamasKingSize());
+        quartoModel.setTotalCamasQueenSize(quartoEntity.getTotalCamasQueenSize());
+        quartoModel.setTotalCamasSolteiro(quartoEntity.getTotalCamasSolteiro());
+        quartoModel.setOutrosMoveis(quartoEntity.getOutrosMoveis());
+        quartoModel.setValorDiaria(quartoEntity.getValorDiaria());
         return  quartoModel;
     }
 }

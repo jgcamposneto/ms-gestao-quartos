@@ -3,10 +3,9 @@ package br.com.fiap.postech.app.gestaoquarto.data.repositories;
 import br.com.fiap.postech.app.gestaoquarto.data.datasources.PredioDatasourcesLocal;
 import br.com.fiap.postech.app.gestaoquarto.data.datasources.QuartoDatasourcesLocal;
 import br.com.fiap.postech.app.gestaoquarto.data.models.PredioModel;
-import br.com.fiap.postech.app.gestaoquarto.domain.entities.Quarto;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.QuartoEntity;
 import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoModel;
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.QuartoRepository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,9 +20,9 @@ public class QuartoRepositoryImpl implements QuartoRepository {
     }
 
     @Override
-    public void criarQuarto(Quarto quarto) {
-        PredioModel predioModel = predioDatasourcesLocal.consultarPredio(quarto.getPredio().getId());
-        QuartoModel quartoModel = QuartoModel.toQuartoModel(quarto);
+    public void criarQuarto(QuartoEntity quartoEntity) {
+        PredioModel predioModel = predioDatasourcesLocal.consultarPredio(quartoEntity.getPredio().getId());
+        QuartoModel quartoModel = QuartoModel.toQuartoModel(quartoEntity);
         quartoModel.setPredioModel(predioModel);
         quartoDatasourcesLocal.criarQuarto(quartoModel);
     }
@@ -34,12 +33,12 @@ public class QuartoRepositoryImpl implements QuartoRepository {
     }
 
     @Override
-    public Quarto consultarQuarto(Long id) {
+    public QuartoEntity consultarQuarto(Long id) {
         return null;
     }
 
     @Override
-    public List<Quarto> consultarQuartos() {
+    public List<QuartoEntity> consultarQuartos() {
         return null;
     }
 }
