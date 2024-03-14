@@ -12,7 +12,10 @@ public class QuartoRequestModel {
     @NotNull(message = "Id do prédio não pode ser nulo")
     private Long idPredio;
 
-    @Pattern(regexp = "SIMPLES", flags = Pattern.Flag.CASE_INSENSITIVE, message = "Tipo do quarto não pode ser nulo")
+    @Pattern(
+            regexp = "STANDARD_SIMPLES|STANDARD_DUPLO|LUXO_SIMPLES|LUXO_DUPLO|PREMIUM_SIMPLES|PREMIUM_DUPLO",
+            flags = Pattern.Flag.CASE_INSENSITIVE,
+            message = "Tipo do quarto não pode ser nulo")
     private TipoQuartoEnumModel tipoQuartoEnumModel;
 
     public static QuartoEntity toQuarto(QuartoRequestModel requestModel) {
