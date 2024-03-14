@@ -6,12 +6,12 @@ import java.util.List;
 public interface Quarto {
 
     Long getId();
-    Predio getPredio();
+    PredioEntity getPredio();
     int getTotalPessoas();
     int getTotalCamasQueenSize();
     int getTotalCamasKingSize();
     int getTotalCamasSolteiro();
     List<String> getOutrosMoveis();
     BigDecimal getValorDiaria();
-    void setPredio(Predio predio);
+    void setPredio(PredioEntity predioEntity);
 }

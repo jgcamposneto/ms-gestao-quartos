@@ -10,8 +10,8 @@ class QuartoSimples extends QuartoPadrao {
     private static final int TOTAL_CAMAS_SOLTEIRO = 0;
     private static final BigDecimal VALOR_DIARIA = new BigDecimal("350.00");
 
-    public QuartoSimples(Predio predio) {
-        super(predio);
+    public QuartoSimples(PredioEntity predioEntity) {
+        super(predioEntity);
         super.totalPessoas = TOTAL_PESSOAS;
         super.totalCamasQueenSize = TOTAL_CAMAS_QUEEN_SIZE;
         super.totalCamasKingSize = TOTAL_CAMAS_KING_SIZE;

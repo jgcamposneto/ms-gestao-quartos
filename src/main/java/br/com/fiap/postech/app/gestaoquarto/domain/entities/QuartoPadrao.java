@@ -6,7 +6,7 @@ import java.util.List;
 abstract class QuartoPadrao implements Quarto {
 
     private Long id;
-    private Predio predio;
+    private PredioEntity predioEntity;
     protected int totalPessoas;
     protected int totalCamasQueenSize;
     protected int totalCamasKingSize;
@@ -14,8 +14,8 @@ abstract class QuartoPadrao implements Quarto {
     protected List<String> outrosImoveis;
     protected BigDecimal valorDiaria;
 
-    protected QuartoPadrao(Predio predio) {
-        this.predio = predio;
+    protected QuartoPadrao(PredioEntity predioEntity) {
+        this.predioEntity = predioEntity;
     }
 
     @Override
@@ -24,8 +24,8 @@ abstract class QuartoPadrao implements Quarto {
     }
 
     @Override
-    public Predio getPredio() {
-        return predio;
+    public PredioEntity getPredio() {
+        return predioEntity;
     }
 
     @Override
@@ -59,7 +59,7 @@ abstract class QuartoPadrao implements Quarto {
     }
 
     @Override
-    public void setPredio(Predio predio) {
-        this.predio = predio;
+    public void setPredio(PredioEntity predioEntity) {
+        this.predioEntity = predioEntity;
     }
 }

@@ -2,7 +2,7 @@ package br.com.fiap.postech.app.gestaoquarto.data.repositories;
 
 import br.com.fiap.postech.app.gestaoquarto.data.datasources.PredioDatasourcesLocal;
 import br.com.fiap.postech.app.gestaoquarto.data.models.PredioModel;
-import br.com.fiap.postech.app.gestaoquarto.domain.entities.Predio;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.PredioEntity;
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.PredioRepository;
 
 public class PredioRepositoryImpl implements PredioRepository {
@@ -14,7 +14,7 @@ public class PredioRepositoryImpl implements PredioRepository {
     }
 
     @Override
-    public Predio consultarPredio(Long id) {
+    public PredioEntity consultarPredio(Long id) {
         PredioModel predioModel = predioDatasourcesLocal.consultarPredio(id);
         if(predioModel != null) {
             return predioModel.toPredio(predioDatasourcesLocal.consultarPredio(id));

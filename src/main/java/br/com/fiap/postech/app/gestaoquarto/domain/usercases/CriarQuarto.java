@@ -1,6 +1,6 @@
 package br.com.fiap.postech.app.gestaoquarto.domain.usercases;
 
-import br.com.fiap.postech.app.gestaoquarto.domain.entities.Predio;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.PredioEntity;
 import br.com.fiap.postech.app.gestaoquarto.domain.entities.Quarto;
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.PredioRepository;
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.QuartoRepository;
@@ -16,11 +16,11 @@ public class CriarQuarto {
     }
 
     public void call(Quarto quarto) {
-        Predio predio = predioRepository.consultarPredio(quarto.getPredio().getId());
-        if(predio == null) {
+        PredioEntity predioEntity = predioRepository.consultarPredio(quarto.getPredio().getId());
+        if(predioEntity == null) {
             throw new RuntimeException("Predio não cadastrado!");
         }
-        quarto.setPredio(predio);
+        quarto.setPredio(predioEntity);
         quartoRepository.criarQuarto(quarto);
     }
 }

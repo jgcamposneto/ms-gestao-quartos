@@ -1,6 +1,6 @@
 package br.com.fiap.postech.app.gestaoquarto.data.models;
 
-import br.com.fiap.postech.app.gestaoquarto.domain.entities.Predio;
+import br.com.fiap.postech.app.gestaoquarto.domain.entities.PredioEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,10 +24,10 @@ public class PredioModel {
     @OneToMany(mappedBy = "predioModel", cascade = CascadeType.ALL)
     private List<QuartoModel> quartos;
 
-    public Predio toPredio(PredioModel predioModel) {
-        Predio predio = new Predio();
-        predio.setLocalizacao(predioModel.getLocalizacao());
-        predio.setId(predioModel.getId());
-        return predio;
+    public PredioEntity toPredio(PredioModel predioModel) {
+        PredioEntity predioEntity = new PredioEntity();
+        predioEntity.setLocalizacao(predioModel.getLocalizacao());
+        predioEntity.setId(predioModel.getId());
+        return predioEntity;
     }
 }
