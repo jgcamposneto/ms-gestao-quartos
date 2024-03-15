@@ -14,6 +14,8 @@ abstract class QuartoPadraoEntity implements QuartoEntity {
     protected List<String> outrosMoveis;
     protected BigDecimal valorDiaria;
 
+    protected String tipoQuarto;
+
     protected QuartoPadraoEntity(PredioEntity predioEntity) {
         this.predioEntity = predioEntity;
     }
@@ -61,5 +63,15 @@ abstract class QuartoPadraoEntity implements QuartoEntity {
     @Override
     public void setPredio(PredioEntity predioEntity) {
         this.predioEntity = predioEntity;
+    }
+
+    @Override
+    public String getTipoQuarto() {
+        return tipoQuarto;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 }

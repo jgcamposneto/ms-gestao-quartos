@@ -15,8 +15,8 @@ public class QuartoDatasourcesLocalImpl implements QuartoDatasourcesLocal {
     }
 
     @Override
-    public void criarQuarto(QuartoModel quartoModel) {
-        jpaQuartoRepository.save(quartoModel);
+    public QuartoModel criarQuarto(QuartoModel quartoModel) {
+        return jpaQuartoRepository.save(quartoModel);
     }
 
     @Override

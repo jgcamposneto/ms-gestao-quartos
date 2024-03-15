@@ -14,11 +14,11 @@ public class CriarQuartoUseCase {
         this.consultarPredioUseCase = consultarPredioUseCase;
     }
 
-    public void call(QuartoEntity quartoEntity) {
+    public QuartoEntity call(QuartoEntity quartoEntity) {
         PredioEntity predioEntity = consultarPredioUseCase.call(quartoEntity.getPredio().getId());
         validarPredio(predioEntity);
         quartoEntity.setPredio(predioEntity);
-        quartoRepository.criarQuarto(quartoEntity);
+        return quartoRepository.criarQuarto(quartoEntity);
     }
 
     private static void validarPredio(PredioEntity predioEntity) {

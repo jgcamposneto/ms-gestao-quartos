@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface QuartoRepository {
 
-    void criarQuarto(QuartoEntity quartoEntity);
+    QuartoEntity criarQuarto(QuartoEntity quartoEntity);
     void apagarQuarto(Long id);
     QuartoEntity consultarQuarto(Long id);
     List<QuartoEntity> consultarQuartos();

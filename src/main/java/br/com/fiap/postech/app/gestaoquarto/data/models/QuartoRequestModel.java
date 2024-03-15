@@ -16,12 +16,12 @@ public class QuartoRequestModel {
             regexp = "STANDARD_SIMPLES|STANDARD_DUPLO|LUXO_SIMPLES|LUXO_DUPLO|PREMIUM_SIMPLES|PREMIUM_DUPLO",
             flags = Pattern.Flag.CASE_INSENSITIVE,
             message = "Tipo do quarto não pode ser nulo")
-    private TipoQuartoEnumModel tipoQuartoEnumModel;
+    private TipoQuartoEnumRequestModel tipoQuartoEnumRequestModel;
 
-    public static QuartoEntity toQuarto(QuartoRequestModel requestModel) {
+    public static QuartoEntity toQuartoEntity(QuartoRequestModel requestModel) {
         PredioEntity predioEntity = new PredioEntity();
         predioEntity.setId(requestModel.idPredio);
-        return requestModel.tipoQuartoEnumModel.tipoQuarto(predioEntity);
+        return requestModel.tipoQuartoEnumRequestModel.tipoQuarto(predioEntity);
     }
 
 }

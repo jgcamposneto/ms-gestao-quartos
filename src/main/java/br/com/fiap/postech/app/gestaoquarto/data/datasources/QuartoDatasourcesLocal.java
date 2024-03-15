@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface QuartoDatasourcesLocal {
 
-    void criarQuarto(QuartoModel quartoModel);
+    QuartoModel criarQuarto(QuartoModel quartoModel);
     void apagarQuarto(Long id);
     QuartoModel consultarQuarto(Long id);
     List<QuartoModel> consultarQuartos();

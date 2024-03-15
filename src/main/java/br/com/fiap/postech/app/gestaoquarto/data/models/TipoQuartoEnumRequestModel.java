@@ -2,7 +2,7 @@ package br.com.fiap.postech.app.gestaoquarto.data.models;
 
 import br.com.fiap.postech.app.gestaoquarto.domain.entities.*;
 
-public enum TipoQuartoEnumModel {
+public enum TipoQuartoEnumRequestModel {
 
     STANDARD_SIMPLES{
         @Override

@@ -21,18 +21,27 @@ public class QuartoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "predio_id")
     private PredioModel predioModel;
+
     private int totalPessoas;
+
     private int totalCamasQueenSize;
+
     private int totalCamasKingSize;
+
     private int totalCamasSolteiro;
+
     @ElementCollection
     @CollectionTable(name = "outros_moveis", joinColumns = @JoinColumn(name = "quarto_id"))
     @Column(name = "outro_movel")
     protected List<String> outrosMoveis;
+
     protected BigDecimal valorDiaria;
+
+    private String tipoQuarto;
 
     public static QuartoModel toQuartoModel(QuartoEntity quartoEntity) {
         QuartoModel quartoModel = new QuartoModel();
@@ -43,6 +52,8 @@ public class QuartoModel {
         quartoModel.setTotalCamasSolteiro(quartoEntity.getTotalCamasSolteiro());
         quartoModel.setOutrosMoveis(quartoEntity.getOutrosMoveis());
         quartoModel.setValorDiaria(quartoEntity.getValorDiaria());
-        return  quartoModel;
+        quartoModel.setTipoQuarto(quartoEntity.getTipoQuarto());
+        return quartoModel;
     }
+
 }

@@ -14,4 +14,6 @@ public interface QuartoEntity {
     List<String> getOutrosMoveis();
     BigDecimal getValorDiaria();
     void setPredio(PredioEntity predioEntity);
+    String getTipoQuarto();
+    void setId(Long id);
 }

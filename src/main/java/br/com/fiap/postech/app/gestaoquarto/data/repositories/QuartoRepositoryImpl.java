@@ -20,11 +20,13 @@ public class QuartoRepositoryImpl implements QuartoRepository {
     }
 
     @Override
-    public void criarQuarto(QuartoEntity quartoEntity) {
+    public QuartoEntity criarQuarto(QuartoEntity quartoEntity) {
         PredioModel predioModel = predioDatasourcesLocal.consultarPredio(quartoEntity.getPredio().getId());
         QuartoModel quartoModel = QuartoModel.toQuartoModel(quartoEntity);
         quartoModel.setPredioModel(predioModel);
-        quartoDatasourcesLocal.criarQuarto(quartoModel);
+        QuartoModel quartoModelCriado = quartoDatasourcesLocal.criarQuarto(quartoModel);
+        quartoEntity.setId(quartoModelCriado.getId());
+        return quartoEntity;
     }
 
     @Override
