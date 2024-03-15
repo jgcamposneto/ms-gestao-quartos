@@ -38,4 +38,23 @@ public interface QuartoApi {
             @ApiResponse(responseCode = "400", description = "Requisição não pode ser completada")
     })
     ResponseEntity<?> getQuarto(@PathVariable(name = "id") Long id);
+
+    @Operation(
+            summary = "Consulta de Quartos",
+            description = "Consulta todos os Quartos")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Quarto localizado com sucesso"),
+            @ApiResponse(responseCode = "400", description = "Requisição não pode ser completada")
+    })
+    ResponseEntity<?> getQuartos();
+
+    @Operation(
+            summary = "Apaga o Quarto",
+            description = "Apaga o Quarto com o Id informado")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Quarto apagado com sucesso"),
+            @ApiResponse(responseCode = "400", description = "Requisição não pode ser completada")
+    })
+    ResponseEntity<?> deleteQuarto(@PathVariable(name = "id") Long id);
+
 }

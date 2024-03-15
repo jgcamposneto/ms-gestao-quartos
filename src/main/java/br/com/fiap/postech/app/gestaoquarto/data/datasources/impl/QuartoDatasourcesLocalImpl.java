@@ -22,7 +22,7 @@ public class QuartoDatasourcesLocalImpl implements QuartoDatasourcesLocal {
 
     @Override
     public void apagarQuarto(Long id) {
-
+        jpaQuartoRepository.deleteById(id);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class QuartoDatasourcesLocalImpl implements QuartoDatasourcesLocal {
 
     @Override
     public List<QuartoModel> consultarQuartos() {
-        return null;
+        return jpaQuartoRepository.findAll();
     }
 
     @Override

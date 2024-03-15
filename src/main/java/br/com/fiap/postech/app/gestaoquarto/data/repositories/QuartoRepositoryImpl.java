@@ -8,6 +8,7 @@ import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoModel;
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.QuartoRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class QuartoRepositoryImpl implements QuartoRepository {
 
@@ -31,7 +32,7 @@ public class QuartoRepositoryImpl implements QuartoRepository {
 
     @Override
     public void apagarQuarto(Long id) {
-
+        quartoDatasourcesLocal.apagarQuarto(id);
     }
 
     @Override
@@ -41,7 +42,10 @@ public class QuartoRepositoryImpl implements QuartoRepository {
 
     @Override
     public List<QuartoEntity> consultarQuartos() {
-        return null;
+        return quartoDatasourcesLocal.consultarQuartos()
+                .stream()
+                .map(QuartoModel::toQuartoEntity)
+                .collect(Collectors.toList());
     }
 
     @Override
