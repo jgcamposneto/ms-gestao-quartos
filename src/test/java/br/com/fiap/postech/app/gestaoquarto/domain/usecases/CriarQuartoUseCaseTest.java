@@ -56,12 +56,11 @@ public class CriarQuartoUseCaseTest {
         // Executando o método que será testado e verificando se uma exceção é lançada
         Assertions.assertThrows(RuntimeException.class, () -> {
             criarQuartoUseCase.call(quartoEntity);
+            // Verificando se o método de ConsultarPredioUseCase foi chamado corretamente
+            verify(consultarPredioUseCase, times(1)).call(anyLong());
+
+            // Verificando se o método de criarQuarto não foi chamado
+            verify(quartoRepository, never()).criarQuarto(quartoEntity);
         });
-
-        // Verificando se o método de ConsultarPredioUseCase foi chamado corretamente
-        verify(consultarPredioUseCase, times(1)).call(anyLong());
-
-        // Verificando se o método de criarQuarto não foi chamado
-        verify(quartoRepository, never()).criarQuarto(quartoEntity);
     }
 }
