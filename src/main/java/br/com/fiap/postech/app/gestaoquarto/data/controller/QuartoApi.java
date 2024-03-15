@@ -19,7 +19,7 @@ public interface QuartoApi {
             @ApiResponse(responseCode = "201", description = "Quarto criado com sucesso"),
             @ApiResponse(responseCode = "400", description = "Requisição não pode ser completada")
     })
-    ResponseEntity<?> create(@RequestBody QuartoRequestModel requestModel);
+    ResponseEntity<?> createQuarto(@RequestBody QuartoRequestModel requestModel);
 
     @Operation(
             summary = "Atualiza um Quarto",
@@ -28,5 +28,14 @@ public interface QuartoApi {
             @ApiResponse(responseCode = "200", description = "Quarto atualizado com sucesso"),
             @ApiResponse(responseCode = "400", description = "Requisição não pode ser completada")
     })
-    ResponseEntity<?> update(@PathVariable(name = "id") Long id, @RequestBody QuartoRequestModel requestModel);
+    ResponseEntity<?> updateQuarto(@PathVariable(name = "id") Long id, @RequestBody QuartoRequestModel requestModel);
+
+    @Operation(
+            summary = "Consulta um Quarto",
+            description = "Consulta um Quarto pelo Id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Quarto localizado com sucesso"),
+            @ApiResponse(responseCode = "400", description = "Requisição não pode ser completada")
+    })
+    ResponseEntity<?> getQuarto(@PathVariable(name = "id") Long id);
 }

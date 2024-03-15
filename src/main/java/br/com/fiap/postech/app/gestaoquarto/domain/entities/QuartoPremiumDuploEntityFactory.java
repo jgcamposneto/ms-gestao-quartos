@@ -5,4 +5,11 @@ public class QuartoPremiumDuploEntityFactory implements QuartoEntityFactory {
     public QuartoEntity create(PredioEntity predioEntity) {
         return new QuartoPremiumDuploEntity(predioEntity);
     }
+
+    @Override
+    public QuartoEntity create(PredioEntity predioEntity, Long id) {
+        QuartoPremiumDuploEntity quartoPremiumDuploEntity = new QuartoPremiumDuploEntity(predioEntity);
+        quartoPremiumDuploEntity.setId(id);
+        return quartoPremiumDuploEntity;
+    }
 }

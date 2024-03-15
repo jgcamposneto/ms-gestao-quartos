@@ -61,21 +61,16 @@ public class QuartoModel {
         predioEntity.setId(quartoModel.getPredioModel().getId());
         predioEntity.setLocalizacao(quartoModel.getPredioModel().getLocalizacao());
 
-        if (quartoModel.getTipoQuarto().equals("STANDARD_SIMPLES")) {
-            return new QuartoStandardSimplesEntityFactory().create(predioEntity);
-        } else if (quartoModel.getTipoQuarto().equals("STANDARD_DUPLO")) {
-            return new QuartoStandardDuploEntityFactory().create(predioEntity);
-        } else if (quartoModel.getTipoQuarto().equals("LUXO_SIMPLES")) {
-            return new QuartoLuxoSimplesEntityFactory().create(predioEntity);
-        } else if (quartoModel.getTipoQuarto().equals("LUXO_DUPLO")) {
-            return new QuartoLuxoDuploEntityFactory().create(predioEntity);
-        } else if (quartoModel.getTipoQuarto().equals("PREMIUM_SIMPLES")) {
-            return new QuartoPremiumSimplesEntityFactory().create(predioEntity);
-        } else if (quartoModel.getTipoQuarto().equals("PREMIUM_DUPLO")) {
-            return new QuartoPremiumDuploEntityFactory().create(predioEntity);
-        } else {
-            throw new IllegalArgumentException("Tipo de quarto não reconhecido: " + quartoModel.getTipoQuarto());
-        }
+        return switch (quartoModel.getTipoQuarto()) {
+            case "STANDARD_SIMPLES" -> new QuartoStandardSimplesEntityFactory().create(predioEntity, quartoModel.getId());
+            case "STANDARD_DUPLO" -> new QuartoStandardDuploEntityFactory().create(predioEntity, quartoModel.getId());
+            case "LUXO_SIMPLES" -> new QuartoLuxoSimplesEntityFactory().create(predioEntity, quartoModel.getId());
+            case "LUXO_DUPLO" -> new QuartoLuxoDuploEntityFactory().create(predioEntity, quartoModel.getId());
+            case "PREMIUM_SIMPLES" -> new QuartoPremiumSimplesEntityFactory().create(predioEntity, quartoModel.getId());
+            case "PREMIUM_DUPLO" -> new QuartoPremiumDuploEntityFactory().create(predioEntity, quartoModel.getId());
+            default ->
+                    throw new IllegalArgumentException("Tipo de quarto não reconhecido: " + quartoModel.getTipoQuarto());
+        };
     }
 
 }
