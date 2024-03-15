@@ -10,5 +10,6 @@ public interface QuartoRepository {
     void apagarQuarto(Long id);
     QuartoEntity consultarQuarto(Long id);
     List<QuartoEntity> consultarQuartos();
+    QuartoEntity atualizarQuarto(QuartoEntity quartoEntity);
 
 }

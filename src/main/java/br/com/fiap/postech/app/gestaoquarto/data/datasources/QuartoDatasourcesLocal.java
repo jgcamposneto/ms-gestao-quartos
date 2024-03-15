@@ -10,4 +10,5 @@ public interface QuartoDatasourcesLocal {
     void apagarQuarto(Long id);
     QuartoModel consultarQuarto(Long id);
     List<QuartoModel> consultarQuartos();
+    QuartoModel atualizarQuarto(QuartoModel quartoModel);
 }

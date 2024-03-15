@@ -36,11 +36,20 @@ public class QuartoRepositoryImpl implements QuartoRepository {
 
     @Override
     public QuartoEntity consultarQuarto(Long id) {
-        return null;
+        return QuartoModel.toQuartoEntity(quartoDatasourcesLocal.consultarQuarto(id));
     }
 
     @Override
     public List<QuartoEntity> consultarQuartos() {
         return null;
+    }
+
+    @Override
+    public QuartoEntity atualizarQuarto(QuartoEntity quartoEntity) {
+        PredioModel predioModel = predioDatasourcesLocal.consultarPredio(quartoEntity.getPredio().getId());
+        QuartoModel quartoModel = QuartoModel.toQuartoModel(quartoEntity);
+        quartoModel.setPredioModel(predioModel);
+        quartoDatasourcesLocal.atualizarQuarto(quartoModel);
+        return quartoEntity;
     }
 }

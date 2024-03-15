@@ -5,6 +5,7 @@ import br.com.fiap.postech.app.gestaoquarto.data.datasources.QuartoDatasourcesLo
 import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoModel;
 
 import java.util.List;
+import java.util.Optional;
 
 public class QuartoDatasourcesLocalImpl implements QuartoDatasourcesLocal {
 
@@ -26,11 +27,17 @@ public class QuartoDatasourcesLocalImpl implements QuartoDatasourcesLocal {
 
     @Override
     public QuartoModel consultarQuarto(Long id) {
-        return null;
+        Optional<QuartoModel> op = jpaQuartoRepository.findById(id);
+        return op.get();
     }
 
     @Override
     public List<QuartoModel> consultarQuartos() {
         return null;
+    }
+
+    @Override
+    public QuartoModel atualizarQuarto(QuartoModel quartoModel) {
+        return jpaQuartoRepository.save(quartoModel);
     }
 }
