@@ -4,6 +4,10 @@ import br.com.fiap.postech.app.gestaoquarto.data.models.QuartoRequestModel;
 import br.com.fiap.postech.app.gestaoquarto.domain.entities.QuartoEntity;
 import br.com.fiap.postech.app.gestaoquarto.domain.usecases.ConsultarPredioUseCase;
 import br.com.fiap.postech.app.gestaoquarto.domain.usecases.CriarQuartoUseCase;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("quartos")
-public class QuartoController {
+public class QuartoController implements QuartoApi{
 
     final CriarQuartoUseCase criarQuarto;
     final ConsultarPredioUseCase consultarPredioUseCase;
@@ -24,6 +28,7 @@ public class QuartoController {
         this.consultarPredioUseCase = consultarPredioUseCase;
     }
 
+    @Override
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> create(@RequestBody QuartoRequestModel requestModel) {
         try {
