@@ -1,4 +1,4 @@
-package br.com.fiap.postech.gestaoquarto;
+package br.com.fiap.postech.app.gestaoquarto;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
