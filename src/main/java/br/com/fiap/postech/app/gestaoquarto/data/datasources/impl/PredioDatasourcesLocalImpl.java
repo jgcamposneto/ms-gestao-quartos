@@ -16,4 +16,14 @@ public class PredioDatasourcesLocalImpl implements PredioDatasourcesLocal {
     public PredioModel consultarPredio(Long id) {
         return predioRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public PredioModel cadastrarPredio(PredioModel predioModel) {
+        return predioRepository.save(predioModel);
+    }
+
+    @Override
+    public boolean existeEssePredio(String localizacao) {
+        return predioRepository.existsByLocalizacao(localizacao);
+    }
 }

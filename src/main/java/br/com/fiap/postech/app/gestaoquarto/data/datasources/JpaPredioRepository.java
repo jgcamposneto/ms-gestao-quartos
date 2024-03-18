@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface JpaPredioRepository extends JpaRepository<PredioModel, Long> {
-
-
+    boolean existsByLocalizacao(String localizacao);
 }

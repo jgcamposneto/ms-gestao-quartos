@@ -30,4 +30,10 @@ public class PredioModel {
         predioEntity.setId(predioModel.getId());
         return predioEntity;
     }
+
+    public static PredioModel toModel(PredioEntity predioEntity) {
+        PredioModel predioModel = new PredioModel();
+        predioModel.setLocalizacao(predioEntity.getLocalizacao());
+        return predioModel;
+    }
 }
