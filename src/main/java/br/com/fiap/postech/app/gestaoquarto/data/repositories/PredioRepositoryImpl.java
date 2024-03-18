@@ -1,7 +1,6 @@
 package br.com.fiap.postech.app.gestaoquarto.data.repositories;
 
 import br.com.fiap.postech.app.gestaoquarto.data.datasources.PredioDatasourcesLocal;
-import br.com.fiap.postech.app.gestaoquarto.data.datasources.QuartoDatasourcesLocal;
 import br.com.fiap.postech.app.gestaoquarto.data.models.PredioModel;
 import br.com.fiap.postech.app.gestaoquarto.domain.entities.PredioEntity;
 import br.com.fiap.postech.app.gestaoquarto.domain.repositories.PredioRepository;
@@ -16,24 +15,20 @@ public class PredioRepositoryImpl implements PredioRepository {
 
     @Override
     public PredioEntity consultarPredio(Long id) {
-        PredioModel predioModel = predioDatasourcesLocal.consultarPredio(id);
-        if (predioModel != null) {
-            return predioModel.toPredio(predioDatasourcesLocal.consultarPredio(id));
-        }
-        return null;
+        return PredioModel.toPredioEntity(predioDatasourcesLocal.consultarPredio(id));
     }
 
     @Override
     public PredioEntity criarPredio(PredioEntity predioEntity) {
-        PredioModel predioModel = PredioModel.toModel(predioEntity);
+        PredioModel predioModel = PredioModel.toPredioModel(predioEntity);
         PredioModel predioSaved = predioDatasourcesLocal.cadastrarPredio(predioModel);
-        return predioSaved.toPredio(predioSaved);
+        return PredioModel.toPredioEntity(predioSaved);
     }
 
     @Override
     public PredioEntity atualizarPredio(PredioEntity predioEntity) {
         PredioModel predioModel = predioDatasourcesLocal.consultarPredio(predioEntity.getId());
         predioModel.setLocalizacao(predioEntity.getLocalizacao());
-        return predioModel.toPredio(predioModel);
+        return PredioModel.toPredioEntity(predioModel);
     }
 }

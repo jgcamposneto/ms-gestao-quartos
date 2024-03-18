@@ -13,15 +13,8 @@ public class CriarPredioUseCase {
         this.consultarPredioUseCase = consultarPredioUseCase;
     }
 
-    public PredioEntity call(PredioEntity predioEntityParam) {
-        PredioEntity predioEntity = consultarPredioUseCase.call(predioEntityParam.getId());
-        validarPredio(predioEntity);
+    public PredioEntity call(PredioEntity predioEntity) {
         return predioRepository.criarPredio(predioEntity);
     }
 
-    private static void validarPredio(PredioEntity predioEntity) {
-        if(predioEntity == null) {
-            throw new RuntimeException("Predio não cadastrado!");
-        }
-    }
-}
+ }

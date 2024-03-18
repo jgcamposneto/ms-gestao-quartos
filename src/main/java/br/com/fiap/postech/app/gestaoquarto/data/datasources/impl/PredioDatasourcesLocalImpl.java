@@ -4,6 +4,8 @@ import br.com.fiap.postech.app.gestaoquarto.data.datasources.JpaPredioRepository
 import br.com.fiap.postech.app.gestaoquarto.data.datasources.PredioDatasourcesLocal;
 import br.com.fiap.postech.app.gestaoquarto.data.models.PredioModel;
 
+import java.util.Optional;
+
 public class PredioDatasourcesLocalImpl implements PredioDatasourcesLocal {
 
     final JpaPredioRepository predioRepository;
@@ -14,7 +16,8 @@ public class PredioDatasourcesLocalImpl implements PredioDatasourcesLocal {
 
     @Override
     public PredioModel consultarPredio(Long id) {
-        return predioRepository.findById(id).orElse(null);
+        Optional<PredioModel> op = predioRepository.findById(id);
+        return op.get();
     }
 
     @Override

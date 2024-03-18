@@ -24,14 +24,14 @@ public class PredioModel {
     @OneToMany(mappedBy = "predioModel", cascade = CascadeType.ALL)
     private List<QuartoModel> quartos;
 
-    public PredioEntity toPredio(PredioModel predioModel) {
+    public static PredioEntity toPredioEntity(PredioModel predioModel) {
         PredioEntity predioEntity = new PredioEntity();
         predioEntity.setLocalizacao(predioModel.getLocalizacao());
         predioEntity.setId(predioModel.getId());
         return predioEntity;
     }
 
-    public static PredioModel toModel(PredioEntity predioEntity) {
+    public static PredioModel toPredioModel(PredioEntity predioEntity) {
         PredioModel predioModel = new PredioModel();
         predioModel.setLocalizacao(predioEntity.getLocalizacao());
         return predioModel;
