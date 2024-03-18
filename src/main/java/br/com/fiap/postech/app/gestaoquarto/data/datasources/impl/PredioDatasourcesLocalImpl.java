@@ -22,8 +22,4 @@ public class PredioDatasourcesLocalImpl implements PredioDatasourcesLocal {
         return predioRepository.save(predioModel);
     }
 
-    @Override
-    public boolean existeEssePredio(String localizacao) {
-        return predioRepository.existsByLocalizacao(localizacao);
-    }
 }
